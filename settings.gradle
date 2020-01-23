@@ -1,0 +1,2 @@
+include ':app', ':BaseLibrary', ':UserModule', ':HomeModule'
+rootProject.name='NewApp'

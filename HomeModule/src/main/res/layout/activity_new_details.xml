@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.NewDetailsActivity">
+
+    <com.example.bawei.baselibrary.widget.StatusBarView
+        android:id="@+id/stubview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:id="@+id/mtre"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/stubview"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/norequest"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.example.bawei.baselibrary.widget.MyScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:ignore="WebViewLayout">
+
+                <TextView
+                    android:id="@+id/tv_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp" />
+
+                <WebView
+                    android:id="@+id/web_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/newsdtails_recycle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </com.example.bawei.baselibrary.widget.MyScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/mtre"
+        android:background="#ffffff">
+
+        <EditText
+            android:id="@+id/sen_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/edittext"
+            android:hint="写评论"
+            android:padding="@dimen/dp_10" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/dp_10"
+                android:layout_weight="1"
+                android:src="@drawable/ic_message" />
+
+            <ImageView
+                android:id="@+id/sc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/dp_10"
+                android:layout_weight="1"
+                android:src="@drawable/ic_start" />
+
+            <ImageView
+                android:id="@+id/fx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/dp_10"
+                android:layout_weight="1"
+                android:src="@drawable/ic_upload" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
