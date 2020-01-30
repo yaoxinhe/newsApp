@@ -2,6 +2,9 @@ package com.example.bawei.baselibrary;
 
 import android.app.Application;
 
+import com.example.bawei.baselibrary.oss.OssManager;
+import com.example.bawei.baselibrary.oss.impl.AliOssImpl;
+import com.example.bawei.baselibrary.utils.AppUtils;
 import com.umeng.commonsdk.UMConfigure;
 import com.umeng.socialize.PlatformConfig;
 
@@ -29,5 +32,9 @@ public class App extends Application {
         PlatformConfig.setDing("dingoalmlnohc0wggfedpk");
         PlatformConfig.setVKontakte("5764965", "5My6SNliAaLxEm3Lyd9J");
         PlatformConfig.setDropbox("oz8v5apet3arcdy", "h7p2pjbzkkxt02a");
+        AppUtils.init(this);
+        OssManager.getInstance().init(new AliOssImpl());
+
+
     }
 }

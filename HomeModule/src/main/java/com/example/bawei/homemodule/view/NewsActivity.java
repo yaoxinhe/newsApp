@@ -1,15 +1,17 @@
 package com.example.bawei.homemodule.view;
 
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+
 import androidx.annotation.RequiresApi;
 import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.viewpager.widget.ViewPager;
-
-import android.content.Intent;
-import android.os.Build;
-import android.os.Bundle;
 
 import com.example.bawei.baselibrary.base.BaseActivity;
 import com.example.bawei.baselibrary.net.protocol.resp.BaseRespEntity;
@@ -28,6 +30,7 @@ public class NewsActivity extends BaseActivity<HomeViewModel, ViewDataBinding> {
     TabLayout tabLayout;
     ViewPager vp;
     List<Fragment> fragmentList = new ArrayList<>();
+    private ImageView circle;
 
     @Override
     protected void initEvent() {
@@ -43,6 +46,13 @@ public class NewsActivity extends BaseActivity<HomeViewModel, ViewDataBinding> {
     protected void initView(Bundle savedInstanceState) {
         tabLayout = findViewById(R.id.tab);
         vp = findViewById(R.id.viewpager);
+        circle=findViewById(R.id.circle);
+        circle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NewsActivity.this,CircleActivity.class));
+            }
+        });
         Intent intent = getIntent();
         ArrayList<TypeBean> yxh = intent.getParcelableArrayListExtra("yxh");
         if (yxh.size() == 0) {
@@ -72,4 +82,6 @@ public class NewsActivity extends BaseActivity<HomeViewModel, ViewDataBinding> {
     protected int getLayoutId() {
         return R.layout.activity_news;
     }
+
+
 }

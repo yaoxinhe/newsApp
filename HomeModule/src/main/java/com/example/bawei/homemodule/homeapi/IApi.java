@@ -8,6 +8,7 @@ import com.example.bawei.homemodule.bean.MySaveRe;
 import com.example.bawei.homemodule.bean.NewsBean;
 import com.example.bawei.homemodule.bean.NewsDetailsBean;
 import com.example.bawei.homemodule.bean.NewsMessageBean;
+import com.example.bawei.homemodule.bean.ReleaseContentRespEntity;
 import com.example.bawei.homemodule.bean.TypeBean;
 
 import java.util.List;
@@ -33,6 +34,10 @@ public interface IApi {
     LiveData<BaseRespEntity<List<NewsMessageBean>>> getnewsmessage(@Query("newscode")String newscode);
     @POST("api/Comment/addComment")
     LiveData<BaseRespEntity<MySaveRe>> saveMessage(@Body MySaveMessageBean mySaveMessageBean);
+    @GET("api/Headline/getHeadlinesForUserid")
+    LiveData<BaseRespEntity<List<ReleaseContentRespEntity>>> getHeadlinesForUserid(@Query("userid") int userid);
+    @POST("api/Headline/publishHeadLine")
+    LiveData<BaseRespEntity<Boolean>> publishHeadLine(@Query("userid") int userid, @Query("content") String content, @Body List<String> imageList);
 
 
 }

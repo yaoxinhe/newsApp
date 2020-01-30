@@ -12,10 +12,15 @@ import com.example.bawei.homemodule.bean.MySaveRe;
 import com.example.bawei.homemodule.bean.NewsBean;
 import com.example.bawei.homemodule.bean.NewsDetailsBean;
 import com.example.bawei.homemodule.bean.NewsMessageBean;
+import com.example.bawei.homemodule.bean.ReleaseContentRespEntity;
 import com.example.bawei.homemodule.bean.TypeBean;
 import com.example.bawei.homemodule.repository.HomeRepository;
 
 import java.util.List;
+
+import retrofit2.http.Body;
+import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 /**
  * @Author yaoxinhe
@@ -42,5 +47,12 @@ public class HomeViewModel extends AndroidViewModel {
     }
     public LiveData<BaseRespEntity<MySaveRe>> savaMessage(MySaveMessageBean mySaveMessageBean){
         return homeRepository.savaMessage(mySaveMessageBean);
+    }
+
+    public LiveData<BaseRespEntity<List<ReleaseContentRespEntity>>> getHeadlinesForUserid(int userid){
+        return homeRepository.getHeadlinesForUserid(userid);
+    }
+    public LiveData<BaseRespEntity<Boolean>> publishHeadLine(@Query("userid") int userid, @Query("content") String content, @Body List<String> imageList) {
+        return homeRepository.publishHeadLine(userid, content, imageList);
     }
 }

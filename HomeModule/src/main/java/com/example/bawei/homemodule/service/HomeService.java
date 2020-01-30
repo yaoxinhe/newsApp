@@ -9,10 +9,14 @@ import com.example.bawei.homemodule.bean.MySaveRe;
 import com.example.bawei.homemodule.bean.NewsBean;
 import com.example.bawei.homemodule.bean.NewsDetailsBean;
 import com.example.bawei.homemodule.bean.NewsMessageBean;
+import com.example.bawei.homemodule.bean.ReleaseContentRespEntity;
 import com.example.bawei.homemodule.bean.TypeBean;
 import com.example.bawei.homemodule.homeapi.IApi;
 
 import java.util.List;
+
+import retrofit2.http.Body;
+import retrofit2.http.Query;
 
 /**
  * @Author yaoxinhe
@@ -58,5 +62,13 @@ public class HomeService {
     }
     public LiveData<BaseRespEntity<MySaveRe>> savaMessage(MySaveMessageBean mySaveMessageBean){
         return RetrofitFactory.getInstance().create(IApi.class).saveMessage(mySaveMessageBean);
+    }
+    public LiveData<BaseRespEntity<List<ReleaseContentRespEntity>>> getHeadlinesForUserid(int userid){
+        return RetrofitFactory.getInstance().create(IApi.class).getHeadlinesForUserid(userid);
+
+    }
+    public LiveData<BaseRespEntity<Boolean>> publishHeadLine(@Query("userid") int userid, @Query("content") String content, @Body List<String> imageList) {
+        return RetrofitFactory.getInstance().create(IApi.class).publishHeadLine(userid, content, imageList);
+
     }
 }

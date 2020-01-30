@@ -135,49 +135,84 @@ public class NewDetailsActivity extends BaseActivity<HomeViewModel, ViewDataBind
         fx = findViewById(R.id.fx);
         final UMImage umImage = new UMImage(this, R.drawable.ic_2);
         fx.setOnClickListener(new View.OnClickListener() {
+
             @Override
+
             public void onClick(View v) {
+
                 new ShareAction(NewDetailsActivity.this).withMedia(umImage).setDisplayList(SHARE_MEDIA.SINA, SHARE_MEDIA.QQ, SHARE_MEDIA.WEIXIN)
+
                         .setCallback(new UMShareListener() {
+
                             /**
                              * @descrption 分享开始的回调
+
                              * @param platform 平台类型
+
                              */
+
                             @Override
+
                             public void onStart(SHARE_MEDIA platform) {
 
+
                             }
+
 
                             /**
                              * @descrption 分享成功的回调
+
                              * @param platform 平台类型
+
                              */
+
                             @Override
+
                             public void onResult(SHARE_MEDIA platform) {
+
                                 Toast.makeText(NewDetailsActivity.this, "成功                                        了", Toast.LENGTH_LONG).show();
+
                             }
+
 
                             /**
                              * @descrption 分享失败的回调
+
                              * @param platform 平台类型
+
                              * @param t 错误原因
+
                              */
+
                             @Override
+
                             public void onError(SHARE_MEDIA platform, Throwable t) {
+
                                 Toast.makeText(NewDetailsActivity.this, "失                                            败" + t.getMessage(), Toast.LENGTH_LONG).show();
+
                             }
+
 
                             /**
                              * @descrption 分享取消的回调
+
                              * @param platform 平台类型
+
                              */
+
                             @Override
+
                             public void onCancel(SHARE_MEDIA platform) {
+
                                 Toast.makeText(NewDetailsActivity.this, "取消                                          了", Toast.LENGTH_LONG).show();
 
+
                             }
+
                         }).open();
+
             }
+
         });
         newscode = intent.getStringExtra("newscode");
         myMessageAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {

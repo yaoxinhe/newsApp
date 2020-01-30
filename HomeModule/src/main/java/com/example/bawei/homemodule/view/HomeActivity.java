@@ -68,6 +68,7 @@ public class HomeActivity extends BaseActivity<HomeViewModel, ViewDataBinding> {
             }
         });
 
+
     }
 
     @Override

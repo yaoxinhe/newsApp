@@ -37,6 +37,10 @@ android {
     dataBinding {
         enabled = true
     }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
 
 }
 
@@ -50,4 +54,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation project(path: ':BaseLibrary')
     implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.foamtrace:photopicker:1.0'
 }

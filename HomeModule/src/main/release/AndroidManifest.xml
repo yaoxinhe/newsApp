@@ -3,7 +3,9 @@
     package="com.example.bawei.homemodule">
 
     <application>
-        <activity android:name=".view.NewDetailsActivity"></activity>
+        <activity android:name=".view.ReleaseActivity"></activity>
+        <activity android:name=".view.CircleActivity" />
+        <activity android:name=".view.NewDetailsActivity" />
         <activity android:name=".view.NewsActivity" />
         <activity android:name=".view.HomeActivity" />
     </application>

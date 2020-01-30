@@ -22,6 +22,7 @@ import com.example.bawei.baselibrary.validator.IValidatorCallback;
 import com.example.bawei.baselibrary.validator.ValidatorManager;
 import com.example.bawei.baselibrary.validator.ValidatorType;
 import com.example.bawei.baselibrary.validator.anns.Control;
+import com.example.bawei.homemodule.view.CircleActivity;
 import com.example.bawei.homemodule.view.HomeActivity;
 import com.example.bawei.usermodule.R;
 import com.example.bawei.usermodule.viewmodel.RegisterViewModel;

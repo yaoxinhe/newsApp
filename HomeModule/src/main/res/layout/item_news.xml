@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:id="@+id/item_news_headler"
+        android:layout_width="50dp"
+      android:src="@drawable/timg"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/item_news_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/item_news_createtime"
+        app:layout_constraintLeft_toRightOf="@id/item_news_headler"
+        app:layout_constraintTop_toTopOf="@id/item_news_headler" />
+
+    <TextView
+        android:id="@+id/item_news_createtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/item_news_headler"
+        app:layout_constraintLeft_toLeftOf="@id/item_news_nickname"
+        app:layout_constraintTop_toBottomOf="@id/item_news_nickname" />
+
+
+    <Button
+        android:id="@+id/item_news_attention"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/cir_pink"
+        android:text="关注"
+        app:layout_constraintBottom_toBottomOf="@id/item_news_headler"
+        app:layout_constraintRight_toLeftOf="@id/item_news_error"
+        app:layout_constraintTop_toTopOf="@id/item_news_headler" />
+
+    <ImageView
+        android:id="@+id/item_news_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/item_news_headler"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/item_news_headler"
+        android:layout_marginRight="10dp" />
+
+
+
+    <TextView
+        android:id="@+id/item_news_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/item_news_headler"
+        app:layout_constraintTop_toBottomOf="@id/item_news_headler" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/item_news_imagelist"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="@id/item_news_headler"
+        app:layout_constraintTop_toBottomOf="@id/item_news_content"
+        tools:listitem="@layout/item_release"
+        tools:itemCount="1"/>
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:id="@+id/item_news_like"
+        android:layout_width="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintLeft_toLeftOf="@id/item_news_headler"
+        app:layout_constraintTop_toBottomOf="@id/item_news_imagelist"
+        app:layout_constraintRight_toLeftOf="@id/item_news_comment"
+        android:gravity="center"
+        android:src="@mipmap/like"/>
+
+    <TextView
+        android:id="@+id/item_news_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/item_news_like"
+        app:layout_constraintTop_toTopOf="@id/item_news_like"
+        android:layout_marginLeft="80dp"
+        android:gravity="center"
+        android:drawableLeft="@mipmap/comment"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
